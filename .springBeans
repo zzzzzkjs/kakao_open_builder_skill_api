@@ -9,7 +9,7 @@
 	<configs>
 	</configs>
 	<autoconfigs>
-		<config>WebContent/WEB-INF/chatBot-servlet.xml</config>
+		<config>WebContent/WEB-INF/chatBotV2-servlet.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
