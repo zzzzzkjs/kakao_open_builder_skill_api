@@ -86,7 +86,9 @@ public class ChatBotController {
 		} else if (utterance.contains("뇽뇽아") || "야".equals(utterance)) {
 			selected = "뇽뇽이 불렀뇽??(잘난척)";
 		} else {
-			selected = "뇽뇽이 무슨말인지 모르겠다뇽...(허걱)";
+			selected = "뇽뇽이 무슨말인지 모르겠다뇽...(허걱)\n\n" + "vs를 포함하여 단어를 제시하면 뇽뇽이가 대답할 줄꺼에요.\n\n" + "⭐예시⭐\n"
+					+ "😳결정장애 철수 : 짜장면 vs 짬뽕\n" + "🐱결정왕 뇽뇽이 : 짜장면!\n";
+
 		}
 
 		// 응답부
