@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG" name="chatBot" monitorInterval="30">
+
+    <!-- log4j2 설정파일에서 사용할 프로퍼티 정의 -->
+    <Properties>
+        <Property name="logName">chatBot</Property>
+        <Property name="logLayout">%d{[yyyy-MM-dd HH:mm:ss]} [%-5level] %C{1}.%M(%F:%L) - %m%n</Property>
+
+        <Property name="logPath">/usr/local/apache-tomcat-8.5.31/logs/cahtBotV2</Property>
+        <Property name="fileLog">${logPath}/${logName}.${date:yyyyMMdd}.log</Property>
+        <Property name="fileLogArchivePattern">${fileLog}_%i.log.gz</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="${logLayout}" />
+        </Console>
+
+        <RollingFile name="FILE" fileName="${fileLog}" filePattern="${fileLogArchivePattern}">
+            <PatternLayout pattern="${logLayout}" />
+            <Policies>
+                <!-- 로그파일 용량 250MB 기준 압축하여 저장 -->
+                <SizeBasedTriggeringPolicy size="250 MB" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <!-- <AppenderRef ref="FILE" /> -->
+            <appender-ref ref="CONSOLE" />
+        </Root>
+    </Loggers>
+
+</Configuration>
